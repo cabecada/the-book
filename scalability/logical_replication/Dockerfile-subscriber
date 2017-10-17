@@ -1,8 +1,6 @@
 FROM ubuntu:16.04
 
-RUN apt-get update && \
-    apt-get install -y python3.5 python3-pip && \
-    pip3 install --upgrade pip 
+RUN apt-get update 
 
 RUN echo "deb http://apt.postgresql.org/pub/repos/apt/ xenial-pgdg main" >  /etc/apt/sources.list.d/pgdg.list && \
 	apt-get install -y wget && \

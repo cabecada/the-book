@@ -2,16 +2,16 @@ version: '2.1'
 
 services:
 
-  host-a:
+  publisher:
     build:
       context: .
-      dockerfile: Dockerfile-hostA
+      dockerfile: Dockerfile-publisher
     ports:
       - "15432:5432"
 
-  host-b:
+  subscriber:
     build:
       context: .
-      dockerfile: Dockerfile-hostB
+      dockerfile: Dockerfile-subscriber
     ports:
       - "25432:5432"
