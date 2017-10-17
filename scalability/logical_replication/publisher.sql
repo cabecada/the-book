@@ -1,3 +1,2 @@
 ALTER USER car_portal_app REPLICATION;
-SET ROLE car_portal_app;
 CREATE PUBLICATION car_model FOR ALL TABLES;
