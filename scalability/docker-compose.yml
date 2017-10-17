@@ -1,0 +1,17 @@
+version: '2.1'
+
+services:
+
+  host-a:
+    build:
+      context: .
+      dockerfile: Dockerfile-hostA
+    ports:
+      - "15432:5432"
+
+  host-b:
+    build:
+      context: .
+      dockerfile: Dockerfile-hostB
+    ports:
+      - "25432:5432"
