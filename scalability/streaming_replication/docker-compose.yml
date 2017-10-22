@@ -3,6 +3,7 @@ version: '2.1'
 services:
 
   master:
+    hostname: master
     build:
       context: .
       dockerfile: Dockerfile-master
@@ -10,6 +11,7 @@ services:
       - "15432:5432"
 
   standby:
+    hostname: standby
     build:
       context: .
       dockerfile: Dockerfile-standby

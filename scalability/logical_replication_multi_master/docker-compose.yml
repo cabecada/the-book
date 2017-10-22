@@ -3,16 +3,19 @@ version: '2.1'
 services:
 
   publisher-a:
+    hostname: publisher-a
     build:
       context: .
       dockerfile: Dockerfile-publisher
 
   publisher-b:
+    hostname: publisher-b
     build:
       context: .
       dockerfile: Dockerfile-publisher
 
   subscriber:
+    hostname: subscriber
     build:
       context: .
       dockerfile: Dockerfile-subscriber

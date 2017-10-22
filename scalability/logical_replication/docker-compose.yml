@@ -3,6 +3,7 @@ version: '2.1'
 services:
 
   publisher:
+    hostname: publisher
     build:
       context: .
       dockerfile: Dockerfile-publisher
@@ -10,6 +11,7 @@ services:
       - "15432:5432"
 
   subscriber:
+    hostname: subscriber
     build:
       context: .
       dockerfile: Dockerfile-subscriber
