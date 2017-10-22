@@ -20,6 +20,10 @@ RUN sed -i 's/md5/trust/g' /etc/postgresql/10/main/pg_hba.conf && \
 	echo "max_replication_slots = 1" >> /etc/postgresql/10/main/postgresql.conf && \
 	service postgresql start && \
 	psql -h localhost -U postgres -f master.sql && \
-	service postgresql stop
+	service postgresql stop && \
+	echo "synchronous_standby_names = 'standby1'" >> /etc/postgresql/10/main/postgresql.conf
+
+VOLUME /etc/postgresql/10/main
+VOLUME /var/lib/postgresql/10/main
 
 ENTRYPOINT ["su", "-", "postgres", "-c", "/usr/lib/postgresql/10/bin/postgres --config-file=/etc/postgresql/10/main/postgresql.conf"]
